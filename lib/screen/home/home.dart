@@ -10,10 +10,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   List<Appointment> appointments= [
     Appointment(appointmentDate: '2019-12-01', appointmentType: 'Dental'),
     Appointment(appointmentDate: '2020-01-01', appointmentType: 'Normal Check Up'),
     Appointment(appointmentDate: '2019-12-01', appointmentType: 'Dental'),
+    Appointment(appointmentDate: '2020-01-01', appointmentType: 'Normal Check Up'),
     Appointment(appointmentDate: '2020-01-01', appointmentType: 'Normal Check Up'),
   ];
 
@@ -21,6 +23,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    int number = 0;
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Color(0xfff9f9f9),
@@ -184,9 +187,13 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,0,20,20),
                 child: Column(
-                  children: appointments.map((appointments) => CardClass(
-                    appointments: appointments,
-                  )).toList(),
+                  children: appointments.map((appointments) {
+                    setState(() {
+                      number=number+1;
+                    });
+                    return CardClass(appointments: appointments,number: number,);
+                  }
+                  ).toList(),
                 ),
               )
             ],

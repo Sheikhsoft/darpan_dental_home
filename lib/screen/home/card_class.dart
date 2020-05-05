@@ -2,8 +2,9 @@ import 'package:darpandentalhome/appoitment.dart';
 import 'package:flutter/material.dart';
 
 class CardClass extends StatefulWidget {
+  final int number;
   final Appointment appointments;
-  CardClass({this.appointments});
+  CardClass({this.appointments,this.number});
 
   @override
   _CardClassState createState() => _CardClassState();
@@ -12,8 +13,6 @@ class CardClass extends StatefulWidget {
 class _CardClassState extends State<CardClass> {
   @override
   Widget build(BuildContext context) {
-    int number = 0;
-
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Card(
@@ -36,7 +35,7 @@ class _CardClassState extends State<CardClass> {
                 ),
                 child: Center(
                   child: Text(
-                    '$number',
+                    '${widget.number}',
                     style: TextStyle(
                       fontSize: 36,
                       fontFamily: 'Rubik'
