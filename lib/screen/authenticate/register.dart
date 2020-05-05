@@ -2,7 +2,16 @@ import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
+
+  final Function toggleView;
+  Register({this.toggleView});
+
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +97,9 @@ class Register extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      widget.toggleView();
+                    },
                     child: Text(
                       'Already have an account?',
                       style: TextStyle(

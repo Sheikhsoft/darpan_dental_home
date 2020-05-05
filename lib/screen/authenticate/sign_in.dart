@@ -1,7 +1,16 @@
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
+
+  final Function toggleView;
+  SignIn({this.toggleView});
+
+  @override
+  _SignInState createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +75,9 @@ class SignIn extends StatelessWidget {
                 elevation: 0,
                 shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                 color: Color(0xffCE5B51),
-                onPressed: () {},
+                onPressed: () {
+                    widget.toggleView();
+                },
                 child: Text(
                   'Register',
                   style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
