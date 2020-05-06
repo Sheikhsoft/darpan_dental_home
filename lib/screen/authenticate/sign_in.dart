@@ -69,21 +69,23 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               SizedBox(height: 20,),
-              MaterialButton(
-                height: 55,
-                minWidth: 230,
-                elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                color: Color(0xffCE5B51),
-                onPressed: () {
-                    widget.toggleView();
-                },
-                child: Text(
-                  'Register',
-                  style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: MaterialButton(
+                  height: 55,
+                  minWidth: 230,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+                  color: Color(0xffCE5B51),
+                  onPressed: () {
+                      widget.toggleView();
+                  },
+                  child: Text(
+                    'Register',
+                    style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                  ),
                 ),
               ),
-              SizedBox(height: 20,)
             ],
           ),
         ),

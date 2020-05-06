@@ -11,3 +11,9 @@ const textInputDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(10)),
   ),
 );
+const textInputtedDecoration = BoxDecoration(
+  color: Colors.white,
+  borderRadius: BorderRadius.all(
+    Radius.circular(20)
+  ),
+);

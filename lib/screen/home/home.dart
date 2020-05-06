@@ -1,10 +1,10 @@
 import 'package:darpandentalhome/appoitment.dart';
+import 'package:darpandentalhome/presentation/custom_icons.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-
   @override
   _HomeState createState() => _HomeState();
 }
@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                                           Radius.circular(20)
                                       ),
                                     ),
-                                    child: Icon(Icons.person,size: 40,color: Color(0xff4B7FFB)),
+                                    child: Icon(MyCustomIcons.teeth,size: 40,color: Color(0xff4B7FFB)),
                                   ),
                                   SizedBox(height: 20,),
                                   Text(
@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
                                             Radius.circular(20)
                                         ),
                                       ),
-                                      child: Icon(Icons.person,size: 40,color: Color(0xffFFB167),),
+                                      child: Icon(MyCustomIcons.heart,size: 40,color: Color(0xffFFB167),),
                                     ),
                                     SizedBox(height: 20,),
                                     Text(
