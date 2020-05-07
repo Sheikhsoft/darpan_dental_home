@@ -59,7 +59,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                 child: Container(
                   width: MediaQuery. of(context). size. width,
                   height: 60,
-                    decoration: textInputtedDecoration,
+                    decoration: boxDecoration,
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -91,7 +91,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                 child: Container(
                   width: MediaQuery. of(context). size. width,
                   height: 60,
-                  decoration: textInputtedDecoration,
+                  decoration: boxDecoration,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
@@ -123,7 +123,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                 child: Container(
                   width: MediaQuery. of(context). size. width,
                   height: 60,
-                  decoration: textInputtedDecoration,
+                  decoration: boxDecoration,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
@@ -155,7 +155,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                 child: Container(
                   width: MediaQuery. of(context). size. width,
                   height: 60,
-                  decoration: textInputtedDecoration,
+                  decoration: boxDecoration,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
@@ -187,7 +187,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                 child: Container(
                   width: MediaQuery. of(context). size. width,
                   height: 60,
-                  decoration: textInputtedDecoration,
+                  decoration: boxDecoration,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(

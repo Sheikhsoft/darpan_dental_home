@@ -1,4 +1,5 @@
 import 'package:darpandentalhome/shared/const.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -15,8 +16,8 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff9f9f9),
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
             children: <Widget>[
               Container(
@@ -37,20 +38,43 @@ class _SignInState extends State<SignIn> {
               ),
               Form(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20,15,20,10),
+                        padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                        child: Text(
+                          'Email:',
+                          style: TextStyle(
+                              fontFamily: 'Rubik',
+                              fontSize: 15,
+                              color: Colors.blue[900]
+                          ),
+                        )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20,10,20,10),
                       child: TextFormField(
                         cursorColor: Colors.black,
-                        decoration: textInputDecoration.copyWith(hintText: 'Email:'),
+                        decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com'),
                       ),
                     ),
+                    Padding(
+                        padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                        child: Text(
+                          'Password:',
+                          style: TextStyle(
+                              fontFamily: 'Rubik',
+                              fontSize: 15,
+                              color: Colors.blue[900]
+                          ),
+                        )
+                    ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(20,15,20,20),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,20),
                         child: TextFormField(
                             obscureText: true,
                             cursorColor: Colors.black,
-                            decoration: textInputDecoration.copyWith(hintText: 'Password:')
+                            decoration: textInputDecoration.copyWith(hintText: '**********')
                         ),
                     )
                   ],

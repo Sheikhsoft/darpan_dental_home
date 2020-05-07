@@ -35,47 +35,112 @@ class _RegisterState extends State<Register> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(20,15,5,10),
-                      child: TextFormField(
-                        cursorColor: Colors.black,
-                        decoration: textInputDecoration.copyWith(hintText: 'First Name:'),
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                            padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                            child: Text(
+                              'First Name:',
+                              style: TextStyle(
+                                  fontFamily: 'Rubik',
+                                  fontSize: 15,
+                                  color: Colors.blue[900]
+                              ),
+                            )
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20,10,5,10),
+                          child: TextFormField(
+                            cursorColor: Colors.black,
+                            decoration: textInputDecoration.copyWith(hintText: 'Sanjiv'),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(5,15,20,10),
-                      child: TextFormField(
-                          cursorColor: Colors.black,
-                          decoration: textInputDecoration.copyWith(hintText: 'Last Name:')
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                            padding: const EdgeInsets.fromLTRB(10,10,20,0),
+                            child: Text(
+                              'Last Name:',
+                              style: TextStyle(
+                                  fontFamily: 'Rubik',
+                                  fontSize: 15,
+                                  color: Colors.blue[900]
+                              ),
+                            )
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(5,10,20,10),
+                          child: TextFormField(
+                              cursorColor: Colors.black,
+                              decoration: textInputDecoration.copyWith(hintText: 'Gurung')
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
+              ),
+              Padding(
+                  padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                  child: Text(
+                    'Email:',
+                    style: TextStyle(
+                        fontFamily: 'Rubik',
+                        fontSize: 15,
+                        color: Colors.blue[900]
+                    ),
+                  )
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: TextFormField(
                   keyboardType: TextInputType.emailAddress,
                     cursorColor: Colors.black,
-                    decoration: textInputDecoration.copyWith(hintText: 'Email:')
+                    decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com')
                 ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                  child: Text(
+                    'Password:',
+                    style: TextStyle(
+                        fontFamily: 'Rubik',
+                        fontSize: 15,
+                        color: Colors.blue[900]
+                    ),
+                  )
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: TextFormField(
                     obscureText: true,
                     cursorColor: Colors.black,
-                    decoration: textInputDecoration.copyWith(hintText: 'Password:')
+                    decoration: textInputDecoration.copyWith(hintText: '*******')
                 ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                  child: Text(
+                    'Phone Number:',
+                    style: TextStyle(
+                        fontFamily: 'Rubik',
+                        fontSize: 15,
+                        color: Colors.blue[900]
+                    ),
+                  )
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: TextFormField(
                     keyboardType: TextInputType.number,
                     cursorColor: Colors.black,
-                    decoration: textInputDecoration.copyWith(hintText: 'Phone Number:')
+                    decoration: textInputDecoration.copyWith(hintText: '9810000001')
                 ),
               ),
               SizedBox(height: 20,),

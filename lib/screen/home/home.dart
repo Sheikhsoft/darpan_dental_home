@@ -14,9 +14,6 @@ class _HomeState extends State<Home> {
   List<Appointment> appointments= [
     Appointment(appointmentDate: '2019-12-01', appointmentType: 'Dental'),
     Appointment(appointmentDate: '2020-01-01', appointmentType: 'Normal Check Up'),
-    Appointment(appointmentDate: '2019-12-01', appointmentType: 'Dental'),
-    Appointment(appointmentDate: '2020-01-01', appointmentType: 'Normal Check Up'),
-    Appointment(appointmentDate: '2020-01-01', appointmentType: 'Normal Check Up'),
   ];
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -185,7 +182,7 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(height: 20,),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20,0,20,20),
+                padding: const EdgeInsets.fromLTRB(20,0,20,10),
                 child: Column(
                   children: appointments.map((appointments) {
                     setState(() {
