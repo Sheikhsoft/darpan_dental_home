@@ -1,6 +1,8 @@
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_rounded_date_picker/rounded_picker.dart';
 
 class AppointmentForm extends StatefulWidget {
   final String appointedFor;
@@ -15,11 +17,12 @@ class _AppointmentFormState extends State<AppointmentForm> {
   DateTime _dateTime = DateTime.now();
 
   Future<DateTime> _selectedDate(BuildContext context) {
-    return showDatePicker(
+    return showRoundedDatePicker(
       context: context,
       initialDate: _dateTime == null ? DateTime.now() : _dateTime,
       firstDate: DateTime(2001),
       lastDate: DateTime(2222),
+      theme: ThemeData.dark()
     );
   }
   @override
