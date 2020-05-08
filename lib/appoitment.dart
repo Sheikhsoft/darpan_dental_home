@@ -3,6 +3,6 @@ class Appointment {
   String email;
   String appointmentDate;
   String appointedDoctor;
-  String appointmentType;
-  Appointment({this.name,this.email,this.appointmentDate,this.appointedDoctor,this.appointmentType});
+  String appointedFor;
+  Appointment({this.name,this.email,this.appointmentDate,this.appointedDoctor,this.appointedFor});
 }

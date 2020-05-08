@@ -55,7 +55,7 @@ class _CardClassState extends State<CardClass> {
                     ),
                   ),
                   Text(
-                      widget.appointments.appointmentType,
+                      widget.appointments.appointedFor,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.grey
