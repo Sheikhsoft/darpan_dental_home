@@ -1,5 +1,7 @@
 import 'package:darpandentalhome/screen/payment/card_form.dart';
 import 'package:darpandentalhome/screen/payment/esewa_form.dart';
+import 'package:darpandentalhome/screen/payment/paymentDialog/error.dart';
+import 'package:darpandentalhome/screen/payment/paymentDialog/successful.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,9 @@ class _PaymentState extends State<Payment> {
 
   @override
   Widget build(BuildContext context) {
+
+    bool success = true;
+
     return Scaffold(
       backgroundColor: Color(0xfff9f9f9),
       body: SingleChildScrollView(
@@ -155,7 +160,12 @@ class _PaymentState extends State<Payment> {
                     elevation: 0,
                     shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                     color: Color(0xff4CAB50),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                        builder: (BuildContext context) => success ? paymentSuccess : paymentError
+                      );
+                    },
                     child: Text(
                       'Pay Now',
                       style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),

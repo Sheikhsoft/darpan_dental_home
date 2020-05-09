@@ -57,7 +57,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: Container(
-                  width: MediaQuery. of(context). size. width,
+                  width: MediaQuery.of(context). size. width,
                   height: 60,
                     decoration: boxDecoration,
                     child: Align(
