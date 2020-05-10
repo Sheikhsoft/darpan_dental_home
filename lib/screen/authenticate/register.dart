@@ -1,6 +1,7 @@
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Register extends StatefulWidget {
 
@@ -25,10 +26,12 @@ class _RegisterState extends State<Register> {
                 padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
                 child: Text(
                   'Register',
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Rubik',
-                  ),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                          fontSize: 35,
+                        fontWeight: FontWeight.w500
+                      ),
+                    )
                 ),
               ),
               Row(
@@ -42,16 +45,21 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.fromLTRB(25,10,20,0),
                             child: Text(
                               'First Name:',
-                              style: TextStyle(
-                                  fontFamily: 'Rubik',
-                                  fontSize: 15,
-                                  color: Colors.blue[900]
-                              ),
+                                style: GoogleFonts.rubik(
+                                  textStyle: TextStyle(
+                                      fontSize: 18,
+                                  ),
+                                )
                             )
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20,10,5,10),
                           child: TextFormField(
+                            style: GoogleFonts.rubik(
+                              textStyle: TextStyle(
+                                fontSize: 15,
+                              ),
+                            ),
                             cursorColor: Colors.black,
                             decoration: textInputDecoration.copyWith(hintText: 'Sanjiv'),
                           ),
@@ -67,16 +75,21 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.fromLTRB(10,10,20,0),
                             child: Text(
                               'Last Name:',
-                              style: TextStyle(
-                                  fontFamily: 'Rubik',
-                                  fontSize: 15,
-                                  color: Colors.blue[900]
-                              ),
+                                style: GoogleFonts.rubik(
+                                  textStyle: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                )
                             )
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(5,10,20,10),
                           child: TextFormField(
+                              style: GoogleFonts.rubik(
+                                textStyle: TextStyle(
+                                  fontSize: 15,
+                                ),
+                              ),
                               cursorColor: Colors.black,
                               decoration: textInputDecoration.copyWith(hintText: 'Gurung')
                           ),
@@ -90,16 +103,21 @@ class _RegisterState extends State<Register> {
                   padding: const EdgeInsets.fromLTRB(25,10,20,0),
                   child: Text(
                     'Email:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
                   )
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: TextFormField(
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
                   keyboardType: TextInputType.emailAddress,
                     cursorColor: Colors.black,
                     decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com')
@@ -109,16 +127,21 @@ class _RegisterState extends State<Register> {
                   padding: const EdgeInsets.fromLTRB(25,10,20,0),
                   child: Text(
                     'Password:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
                   )
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: TextFormField(
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
                     obscureText: true,
                     cursorColor: Colors.black,
                     decoration: textInputDecoration.copyWith(hintText: '*******')
@@ -128,16 +151,21 @@ class _RegisterState extends State<Register> {
                   padding: const EdgeInsets.fromLTRB(25,10,20,0),
                   child: Text(
                     'Phone Number:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
                   )
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20,10,20,10),
                 child: TextFormField(
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
                     keyboardType: TextInputType.number,
                     cursorColor: Colors.black,
                     decoration: textInputDecoration.copyWith(hintText: '9810000001')
@@ -154,7 +182,13 @@ class _RegisterState extends State<Register> {
                   onPressed: () {},
                   child: Text(
                     'Register',
-                    style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -167,8 +201,11 @@ class _RegisterState extends State<Register> {
                     },
                     child: Text(
                       'Already have an account?',
-                      style: TextStyle(
-                        color: Color(0xff4CBBB9),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xff4CBBB9),
+                        ),
                       ),
                     ),
                   ),

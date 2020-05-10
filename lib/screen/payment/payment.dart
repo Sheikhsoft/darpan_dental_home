@@ -24,7 +24,6 @@ class _PaymentState extends State<Payment> {
       backgroundColor: Color(0xfff9f9f9),
       body: SingleChildScrollView(
         child: SafeArea(
-          bottom: false,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,

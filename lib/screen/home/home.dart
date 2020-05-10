@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
       return Container(
         decoration: boxDecoration.copyWith(borderRadius: BorderRadius.all(
             Radius.circular(20))),
-        padding: EdgeInsets.fromLTRB(10,10,10,0),
+        padding: EdgeInsets.fromLTRB(10,0,10,0),
         child: SingleChildScrollView(
           child: AppointmentForm(appointedFor: appointedFor,appointedDoctor: appointedDoctor,),
         ),

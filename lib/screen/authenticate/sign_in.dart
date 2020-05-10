@@ -1,6 +1,7 @@
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -29,9 +30,11 @@ class _SignInState extends State<SignIn> {
                 child: Center(
                   child: Text(
                     'Darpan Dental Home',
-                    style: TextStyle(
-                      fontFamily: 'Rubik',
-                      fontSize: 35,
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.w500
+                      ),
                     ),
                   ),
                 ),
@@ -44,16 +47,21 @@ class _SignInState extends State<SignIn> {
                         padding: const EdgeInsets.fromLTRB(25,10,20,0),
                         child: Text(
                           'Email:',
-                          style: TextStyle(
-                              fontFamily: 'Rubik',
-                              fontSize: 15,
-                              color: Colors.blue[900]
-                          ),
+                          style: GoogleFonts.rubik(
+                            textStyle: TextStyle(
+                                fontSize: 18,
+                            ),
+                          )
                         )
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,10,20,10),
                       child: TextFormField(
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
                         cursorColor: Colors.black,
                         decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com'),
                       ),
@@ -62,16 +70,21 @@ class _SignInState extends State<SignIn> {
                         padding: const EdgeInsets.fromLTRB(25,10,20,0),
                         child: Text(
                           'Password:',
-                          style: TextStyle(
-                              fontFamily: 'Rubik',
-                              fontSize: 15,
-                              color: Colors.blue[900]
-                          ),
+                            style: GoogleFonts.rubik(
+                              textStyle: TextStyle(
+                                fontSize: 18,
+                              ),
+                            )
                         )
                     ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(20,10,20,20),
                         child: TextFormField(
+                            style: GoogleFonts.rubik(
+                              textStyle: TextStyle(
+                                fontSize: 15,
+                              ),
+                            ),
                             obscureText: true,
                             cursorColor: Colors.black,
                             decoration: textInputDecoration.copyWith(hintText: '**********')
@@ -89,7 +102,13 @@ class _SignInState extends State<SignIn> {
                 onPressed: () {},
                 child: Text(
                   'Sign In',
-                  style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 17,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500
+                      ),
+                    )
                 ),
               ),
               SizedBox(height: 20,),
@@ -106,7 +125,13 @@ class _SignInState extends State<SignIn> {
                   },
                   child: Text(
                     'Register',
-                    style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500
+                        ),
+                      )
                   ),
                 ),
               ),

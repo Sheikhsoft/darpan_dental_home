@@ -22,7 +22,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
       initialDate: _dateTime == null ? DateTime.now() : _dateTime,
       firstDate: DateTime(2001),
       lastDate: DateTime(2222),
-      theme: ThemeData.dark()
+      theme: ThemeData.dark(),
     );
   }
   @override
@@ -31,14 +31,27 @@ class _AppointmentFormState extends State<AppointmentForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Center(
-            child: IconButton(
-              icon: Icon(Icons.keyboard_arrow_down,color: Colors.black,),
-              iconSize: 40,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                    'Appointment Form',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontFamily: 'Rubik',
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: Icon(Icons.keyboard_arrow_down,color: Colors.black,),
+                iconSize: 40,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
           ),
           Padding(
               padding: const EdgeInsets.fromLTRB(25,0,20,0),
