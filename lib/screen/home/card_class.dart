@@ -17,7 +17,9 @@ class _CardClassState extends State<CardClass> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+
+        },
         child: Card(
           elevation: 0,
           shape: RoundedRectangleBorder(
