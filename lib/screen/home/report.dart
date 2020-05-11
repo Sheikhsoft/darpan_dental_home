@@ -25,11 +25,6 @@ class _ReportState extends State<Report> {
                   ),
                 ),
               ),
-              Container(
-                child: PDFView(
-                  filePath: 'assets/pdf/Sample.pdf',
-                ),
-              )
             ],
           )
         ),
