@@ -19,8 +19,8 @@ class _HomeState extends State<Home> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   VoidCallback _showAppointmentFormCallBack;
   List<Appointment> appointments= [
-    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental'),
-    Appointment(appointmentDate: '2020-01-01', appointedFor: 'Normal Check Up'),
+    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
+    Appointment(appointmentDate: '2020-01-01', appointedFor: 'Normal Check Up', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
   ];
   @override
   void initState() {

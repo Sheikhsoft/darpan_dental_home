@@ -4,5 +4,6 @@ class Appointment {
   String appointmentDate;
   String appointedDoctor;
   String appointedFor;
-  Appointment({this.name,this.email,this.appointmentDate,this.appointedDoctor,this.appointedFor});
+  String reportURL;
+  Appointment({this.name,this.email,this.appointmentDate,this.appointedDoctor,this.appointedFor,this.reportURL});
 }

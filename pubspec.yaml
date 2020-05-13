@@ -24,7 +24,9 @@ dependencies:
   flutter_rounded_date_picker: 1.0.4
   google_fonts: ^1.1.0
   loading_animations: ^2.1.0
-  flutter_pdfview: ^1.0.1
+  flutter_pdfview: ^1.0.0+10
+  http: ^0.12.1
+  path_provider: ^1.6.8
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

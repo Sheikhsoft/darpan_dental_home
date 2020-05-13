@@ -18,7 +18,7 @@ class _CardClassState extends State<CardClass> {
       padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         onTap: () {
-
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Report(url: widget.appointments.reportURL,)));
         },
         child: Card(
           elevation: 0,

@@ -1,58 +1,76 @@
-import 'dart:io';
-import 'package:darpandentalhome/screen/home/apiForPDF.dart';
+import 'package:darpandentalhome/screen/home/api_for_report.dart';
+import 'package:darpandentalhome/shared/loading.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Report extends StatefulWidget {
+
+  final String url;
+
+  Report({this.url});
+
   @override
   _ReportState createState() => _ReportState();
 }
 
 class _ReportState extends State<Report> {
 
-  String pdfPath = "";
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
+  new GlobalKey<RefreshIndicatorState>();
+
+  String path;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    ApiServiceProvider.loadPDF().then((value) {
+    ApiService(PDF_URL: widget.url).loadPDF().then((value){
       setState(() {
-        pdfPath = value;
+        path=value;
       });
     });
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff9f9f9),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
-                child: Text(
-                  'Report',
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Rubik',
-                  ),
-                ),
-              ),
-//              PDF Viewer Area Down
-              Container(
-                child: PDFView(
-                  filePath: pdfPath,
-                ),
-              )
-            ],
-          )
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+            'Report',
+          style: GoogleFonts.rubik(
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w500
+            )
+          ),
         ),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios,color: Colors.black,),
+          onPressed: () {
+              Navigator.pop(context);
+          },
+        ),
+        backgroundColor: Color(0xfff9f9f9),
+      ),
+      backgroundColor: Color(0xfff9f9f9),
+      body: path != null ? Container(
+        child: PDFView(
+          filePath: path,
+        ),
+      ) : Loading(),
+      floatingActionButton: IconButton(
+        icon: Icon(Icons.refresh,size: 40,),
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Report(url: widget.url,)),
+                  (Route<dynamic> route) => false);
+        },
       ),
     );
   }
