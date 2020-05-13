@@ -66,11 +66,10 @@ class _ReportState extends State<Report> {
       floatingActionButton: IconButton(
         icon: Icon(Icons.refresh,size: 40,),
         onPressed: () {
-          Navigator.pushAndRemoveUntil(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (context) => Report(url: widget.url,)),
-                  (Route<dynamic> route) => false);
+                  builder: (context) => Report(url: widget.url,)));
         },
       ),
     );
