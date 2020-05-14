@@ -5,12 +5,12 @@ import 'package:path_provider/path_provider.dart';
 
 class ApiService{
 
-  final String PDF_URL;
+  final String pdfURL;
 
-  ApiService({this.PDF_URL});
+  ApiService({this.pdfURL});
 
   Future<String> loadPDF() async {
-    var response = await http.get(PDF_URL);
+    var response = await http.get(pdfURL);
 
     var dir = await getTemporaryDirectory();
     File file = File(dir.path + "/data.pdf");

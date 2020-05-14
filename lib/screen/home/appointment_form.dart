@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_rounded_date_picker/rounded_picker.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentForm extends StatefulWidget {
   final String appointedFor;
@@ -38,9 +39,11 @@ class _AppointmentFormState extends State<AppointmentForm> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
                     'Appointment Form',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: 'Rubik',
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 25,
+                    ),
                   ),
                 ),
               ),
@@ -54,22 +57,23 @@ class _AppointmentFormState extends State<AppointmentForm> {
             ],
           ),
           Padding(
-              padding: const EdgeInsets.fromLTRB(25,0,20,0),
+              padding: const EdgeInsets.fromLTRB(25,10,20,0),
               child: Text(
                 'Full Name:',
-                style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 15,
-                    color: Colors.blue[900]
+                style: GoogleFonts.rubik(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               )
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20,10,20,10),
             child: TextFormField(
-              style: TextStyle(
+              style: GoogleFonts.rubik(
+                textStyle: TextStyle(
                   fontSize: 15,
-                  fontFamily: 'Rubik'
+                ),
               ),
               cursorColor: Colors.black,
               decoration: textInputDecoration.copyWith(hintText: 'Sanjiv Gurung'),
@@ -79,19 +83,20 @@ class _AppointmentFormState extends State<AppointmentForm> {
               padding: const EdgeInsets.fromLTRB(25,10,20,0),
               child: Text(
                 'Email:',
-                style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 15,
-                    color: Colors.blue[900]
+                style: GoogleFonts.rubik(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               )
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20,10,20,10),
             child: TextFormField(
-              style: TextStyle(
+              style: GoogleFonts.rubik(
+                textStyle: TextStyle(
                   fontSize: 15,
-                  fontFamily: 'Rubik'
+                ),
               ),
               cursorColor: Colors.black,
               decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com'),
@@ -101,10 +106,10 @@ class _AppointmentFormState extends State<AppointmentForm> {
               padding: const EdgeInsets.fromLTRB(25,10,20,0),
               child: Text(
                 'Date:',
-                style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 15,
-                    color: Colors.blue[900]
+                style: GoogleFonts.rubik(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               )
           ),
@@ -127,9 +132,11 @@ class _AppointmentFormState extends State<AppointmentForm> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       '${_dateTime.year}-${_dateTime.month}-${_dateTime.day}',
-                      style: TextStyle(
-                        fontSize: 15,
-                          fontFamily: 'Rubik'
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500
+                        ),
                       ),
                     ),
                   ),
@@ -141,10 +148,10 @@ class _AppointmentFormState extends State<AppointmentForm> {
               padding: const EdgeInsets.fromLTRB(25,10,20,0),
               child: Text(
                 'Appointed For:',
-                style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 15,
-                    color: Colors.blue[900]
+                style: GoogleFonts.rubik(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               )
           ),
@@ -159,9 +166,11 @@ class _AppointmentFormState extends State<AppointmentForm> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         widget.appointedFor,
-                        style: TextStyle(
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w500,
                             fontSize: 15,
-                            fontFamily: 'Rubik'
+                          ),
                         ),
                       ),
                     ),
@@ -172,10 +181,10 @@ class _AppointmentFormState extends State<AppointmentForm> {
               padding: const EdgeInsets.fromLTRB(25,10,20,0),
               child: Text(
                 'Appointed Doctor:',
-                style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 15,
-                    color: Colors.blue[900]
+                style: GoogleFonts.rubik(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               )
           ),

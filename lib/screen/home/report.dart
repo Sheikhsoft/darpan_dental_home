@@ -26,7 +26,7 @@ class _ReportState extends State<Report> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    ApiService(PDF_URL: widget.url).loadPDF().then((value){
+    ApiService(pdfURL: widget.url).loadPDF().then((value){
       setState(() {
         path=value;
       });
@@ -35,7 +35,6 @@ class _ReportState extends State<Report> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -66,10 +65,14 @@ class _ReportState extends State<Report> {
       floatingActionButton: IconButton(
         icon: Icon(Icons.refresh,size: 40,),
         onPressed: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Report(url: widget.url,)));
+          setState(() {
+            path = null;
+            ApiService(pdfURL: widget.url).loadPDF().then((value){
+              setState(() {
+                path=value;
+              });
+            });
+          });
         },
       ),
     );

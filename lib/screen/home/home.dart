@@ -5,6 +5,7 @@ import 'package:darpandentalhome/screen/home/card_class.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -79,11 +80,13 @@ class _HomeState extends State<Home> {
                         onTap: () {},
                         child: Text(
                             'S',
-                          style: TextStyle(
-                            fontFamily: 'Rubik',
-                            fontSize: 36,
-                            color: Colors.black
-                          ),
+                          style: GoogleFonts.rubik(
+                            textStyle: TextStyle(
+                                fontSize: 36,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black
+                            ),
+                          )
                         ),
                       ),
                     ),
@@ -94,10 +97,12 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
                   'Book Appointment for:',
-                  style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 20
-                  ),
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.w500,
+                        fontSize: 20
+                    ),
+                  )
                 ),
               ),
               SizedBox(height: 20,),
@@ -143,10 +148,12 @@ class _HomeState extends State<Home> {
                                     SizedBox(height: 20,),
                                     Text(
                                       'Dental',
-                                      style: TextStyle(
-                                        fontFamily: 'Rubik',
-                                        fontSize: 13
-                                      ),
+                                      style: GoogleFonts.rubik(
+                                        textStyle: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                            fontSize: 13
+                                        ),
+                                      )
                                     )
                                   ],
                                 )
@@ -196,10 +203,12 @@ class _HomeState extends State<Home> {
                                       Text(
                                         'Normal \n Check Up',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontFamily: 'Rubik',
-                                            fontSize: 13
-                                        ),
+                                        style: GoogleFonts.rubik(
+                                          textStyle: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 13
+                                          ),
+                                        )
                                       )
                                     ],
                                   )
@@ -217,10 +226,12 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
                   'Appointment History',
-                  style: TextStyle(
-                      fontFamily: 'Rubik',
-                      fontSize: 20
-                  ),
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20
+                    ),
+                  )
                 ),
               ),
               SizedBox(height: 20,),

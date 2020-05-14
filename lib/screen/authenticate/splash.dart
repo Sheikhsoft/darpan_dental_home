@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Splash extends StatelessWidget {
   @override
@@ -14,6 +15,7 @@ class Splash extends StatelessWidget {
                 width: MediaQuery. of(context). size. width,
                 child: Image.asset('assets/images/Illustration.png', fit: BoxFit.contain,),
               ),
+              SizedBox(height: 20,),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,15 +24,25 @@ class Splash extends StatelessWidget {
                     child: Text(
                       'Welcome to \n Darpan Dental Home',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Rubik',
-                          fontSize: 35
-                      ),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontSize: 35,
+                          fontWeight: FontWeight.w500
+                        ),
+                      )
                     ),
                   ),
                   SizedBox(height: 20,),
-                  Center(child: Text('We are here to serve you.')),
-                  SizedBox(height: 40,),
+                  Center(child: Text(
+                      'We are here to serve you.',
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey
+                      )
+                    ),
+                  )),
+                  SizedBox(height: 60,),
                   Center(
                     child: MaterialButton(
                       height: 55,
@@ -40,8 +52,10 @@ class Splash extends StatelessWidget {
                       color: Color(0xff4CBBB9),
                       onPressed: () {},
                       child: Text(
-                        'Get Started',
-                        style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                        'Get Started Now',
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.white),
+                        )
                       ),
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:darpandentalhome/appoitment.dart';
 import 'package:darpandentalhome/screen/home/report.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardClass extends StatefulWidget {
   final int number;
@@ -12,13 +13,14 @@ class CardClass extends StatefulWidget {
 }
 
 class _CardClassState extends State<CardClass> {
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Report(url: widget.appointments.reportURL,)));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Report(url: widget.appointments.reportURL)));
         },
         child: Card(
           elevation: 0,
@@ -41,10 +43,12 @@ class _CardClassState extends State<CardClass> {
                   child: Center(
                     child: Text(
                       '${widget.number}',
-                      style: TextStyle(
-                        fontSize: 36,
-                        fontFamily: 'Rubik'
-                      ),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 36
+                        ),
+                      )
                     ),
                   ),
                 ),
@@ -54,17 +58,21 @@ class _CardClassState extends State<CardClass> {
                   children: <Widget>[
                     Text(
                         widget.appointments.appointmentDate,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Rubik'
-                      ),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20
+                        ),
+                      )
                     ),
                     Text(
                         widget.appointments.appointedFor,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey
-                      ),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontSize: 15,
+                          color: Colors.grey
+                        ),
+                      )
                     ),
                   ],
                 )
