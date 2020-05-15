@@ -20,7 +20,7 @@ class _CardClassState extends State<CardClass> {
       padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Report(url: widget.appointments.reportURL)));
+          Navigator.of(context).push(_createRoute(widget.appointments.reportURL));
         },
         child: Card(
           elevation: 0,
@@ -83,4 +83,12 @@ class _CardClassState extends State<CardClass> {
       ),
     );
   }
+}
+Route _createRoute(String url) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => Report(url: url,),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return child;
+    }
+  );
 }

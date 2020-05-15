@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
   home: Main(),
+  debugShowCheckedModeBanner: false,
+
 ));
 
 class Main extends StatelessWidget {

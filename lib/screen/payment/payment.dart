@@ -5,6 +5,7 @@ import 'package:darpandentalhome/screen/payment/paymentDialog/successful.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Payment extends StatefulWidget {
   @override
@@ -32,10 +33,12 @@ class _PaymentState extends State<Payment> {
                 padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
                 child: Text(
                   'Payment',
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Rubik',
-                  ),
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w500
+                    ),
+                  )
                 ),
               ),
               Padding(
@@ -49,18 +52,21 @@ class _PaymentState extends State<Payment> {
                     children: <Widget>[
                       Text(
                         'Appointment Total:',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                            fontSize: 18,
+                          ),
+                        )
                       ),
                       SizedBox(width: 10,),
                       Text(
                         'Rs. 1100',
-                        style: TextStyle(
-                          fontFamily: 'Rubik',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700
-                        ),
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold
+                          ),
+                        )
                       )
                     ],
                   ),
@@ -94,10 +100,12 @@ class _PaymentState extends State<Payment> {
                             SizedBox(width: 10,),
                             Text(
                               'Pay with Credit Card',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white
-                              ),
+                              style: GoogleFonts.rubik(
+                                textStyle: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white
+                                ),
+                              )
                             )
                           ],
                         ),
@@ -137,10 +145,12 @@ class _PaymentState extends State<Payment> {
                             SizedBox(width: 10,),
                             Text(
                               'Pay with eSewa',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white
-                              ),
+                              style: GoogleFonts.rubik(
+                                textStyle: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white
+                                ),
+                              )
                             )
                           ],
                         ),
@@ -167,7 +177,9 @@ class _PaymentState extends State<Payment> {
                     },
                     child: Text(
                       'Pay Now',
-                      style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.white)
+                      ),
                     ),
                   ),
                 ),
