@@ -1,6 +1,7 @@
 import 'package:darpandentalhome/appoitment.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BookedAppointment extends StatefulWidget {
   @override
@@ -27,18 +28,22 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   children: <Widget>[
                     Text(
                       'Appointment',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontFamily: 'Rubik',
-                      ),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 35,
+                          fontWeight: FontWeight.w500
+                        ),
+                      )
                     ),
                     SizedBox(width: 10,),
                     Text(
                       'Booked',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.green
-                      ),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 18,
+                          color: Colors.green
+                        ),
+                      )
                     )
                   ],
                 ),
@@ -47,11 +52,11 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                 padding: const EdgeInsets.fromLTRB(20,10,20,0),
                 child: Text(
                   'Your Name:',
-                  style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 15,
-                    color: Colors.blue[900]
-                  ),
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontSize: 18,
+                    ),
+                  )
                 )
               ),
               Padding(
@@ -66,10 +71,12 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                         padding: const EdgeInsets.only(left: 20),
                         child: Text(
                           'Sanjiv Gurung',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'Rubik'
-                          ),
+                          style: GoogleFonts.rubik(
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500
+                            ),
+                          )
                         ),
                       ),
                     ),
@@ -79,11 +86,11 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   padding: const EdgeInsets.fromLTRB(20,10,20,0),
                   child: Text(
                     'Your Email:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
-                    ),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
+                    )
                   )
               ),
               Padding(
@@ -98,10 +105,12 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                       padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         'sanjivgurung@gmail.com',
-                        style: TextStyle(
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
                             fontSize: 18,
-                            fontFamily: 'Rubik'
-                        ),
+                              fontWeight: FontWeight.w500
+                          ),
+                        )
                       ),
                     ),
                   ),
@@ -111,11 +120,11 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   padding: const EdgeInsets.fromLTRB(20,10,20,0),
                   child: Text(
                     'Appointment Date:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
-                    ),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
+                    )
                   )
               ),
               Padding(
@@ -130,10 +139,12 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                       padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         '2020-01-01',
-                        style: TextStyle(
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
                             fontSize: 18,
-                            fontFamily: 'Rubik'
-                        ),
+                              fontWeight: FontWeight.w500
+                          ),
+                        )
                       ),
                     ),
                   ),
@@ -143,11 +154,11 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   padding: const EdgeInsets.fromLTRB(20,10,20,0),
                   child: Text(
                     'Appointment Doctor:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
-                    ),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
+                    )
                   )
               ),
               Padding(
@@ -162,10 +173,12 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                       padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         'Saurab Adhikari',
-                        style: TextStyle(
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
                             fontSize: 18,
-                            fontFamily: 'Rubik'
-                        ),
+                              fontWeight: FontWeight.w500
+                          ),
+                        )
                       ),
                     ),
                   ),
@@ -175,11 +188,11 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   padding: const EdgeInsets.fromLTRB(20,10,20,0),
                   child: Text(
                     'Appointment For:',
-                    style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontSize: 15,
-                        color: Colors.blue[900]
-                    ),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                      ),
+                    )
                   )
               ),
               Padding(
@@ -194,10 +207,12 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                       padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         'Normal Check Up',
-                        style: TextStyle(
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
                             fontSize: 18,
-                            fontFamily: 'Rubik'
-                        ),
+                              fontWeight: FontWeight.w500
+                          ),
+                        )
                       ),
                     ),
                   ),
@@ -214,7 +229,9 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   onPressed: () {},
                   child: Text(
                     'Request Payment',
-                    style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.white),
+                    )
                   ),
                 ),
               ),
@@ -231,7 +248,9 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                     onPressed: () {},
                     child: Text(
                       'Cancel Appointment',
-                      style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.white),
+                      )
                     ),
                   ),
                 ),
