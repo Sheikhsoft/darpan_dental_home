@@ -88,7 +88,10 @@ Route _createRoute(String url) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => Report(url: url,),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return child;
+      return FadeTransition(
+        opacity: animation,
+        child: child,
+      );
     }
   );
 }
