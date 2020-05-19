@@ -50,6 +50,84 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     int number = 0;
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                    height: 300,
+                    child: DrawerHeader(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.contain,
+                          image: AssetImage('assets/images/Illustration.png')
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      'Darpan Dental Home',
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500
+                        ),
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.feedback,color: Colors.blueAccent,),
+                    title: Text(
+                        'Feedback',
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500
+                        )
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.notifications_active, color: Colors.amber,),
+                    title: Text(
+                      'Reminder',
+                      style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500
+                          )
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+            Container(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: ListTile(
+                  leading: Icon(Icons.exit_to_app,color: Colors.red,),
+                  title: Text(
+                    'Log Out',
+                    style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500
+                        )
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        )
+      ),
       key: _scaffoldKey,
       backgroundColor: Color(0xfff9f9f9),
       body: SingleChildScrollView(
@@ -251,7 +329,6 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      drawer: Drawer(),
     );
   }
 }
