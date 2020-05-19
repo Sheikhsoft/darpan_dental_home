@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "24768973710",
+    "firebase_url": "https://darpandentalhome-3567e.firebaseio.com",
+    "project_id": "darpandentalhome-3567e",
+    "storage_bucket": "darpandentalhome-3567e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24768973710:android:8af45e8f2f877e130bb2df",
+        "android_client_info": {
+          "package_name": "np.com.sanjivgrg.darpandentalhome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24768973710-36s669bs3igtht5um921rqigcn9vsos7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALkp2PrSQEddimx5z8TWMt5X-OnWmRqVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24768973710-36s669bs3igtht5um921rqigcn9vsos7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

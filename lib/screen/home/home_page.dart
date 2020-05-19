@@ -1,4 +1,4 @@
-import 'package:darpandentalhome/appoitment.dart';
+import 'package:darpandentalhome/model/appoitment.dart';
 import 'package:darpandentalhome/presentation/custom_icons.dart';
 import 'package:darpandentalhome/screen/home/appointment_form.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';

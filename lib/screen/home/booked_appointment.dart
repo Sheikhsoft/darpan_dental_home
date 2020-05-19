@@ -1,4 +1,4 @@
-import 'package:darpandentalhome/appoitment.dart';
+import 'file:///C:/Users/DELL/Desktop/Flutter/darpan_dental_home/lib/model/appoitment.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

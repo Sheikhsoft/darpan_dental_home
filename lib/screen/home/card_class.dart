@@ -1,4 +1,4 @@
-import 'package:darpandentalhome/appoitment.dart';
+import 'package:darpandentalhome/model/appoitment.dart';
 import 'package:darpandentalhome/screen/home/report.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
