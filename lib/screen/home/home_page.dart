@@ -2,6 +2,7 @@ import 'package:darpandentalhome/model/appoitment.dart';
 import 'package:darpandentalhome/presentation/custom_icons.dart';
 import 'package:darpandentalhome/screen/home/appointment_form.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';
+import 'package:darpandentalhome/services/auth.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  final AuthService _auth = AuthService();
 
   String appointedFor;
   String appointedDoctor;
@@ -112,6 +115,9 @@ class _HomeState extends State<Home> {
               child: Align(
                 alignment: FractionalOffset.bottomCenter,
                 child: ListTile(
+                  onTap: () async {
+                    await _auth.signOut();
+                  },
                   leading: Icon(Icons.exit_to_app,color: Colors.red,),
                   title: Text(
                     'Log Out',
