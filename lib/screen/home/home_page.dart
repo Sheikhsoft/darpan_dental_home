@@ -22,10 +22,7 @@ class _HomeState extends State<Home> {
   List<Appointment> appointments= [
     Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
     Appointment(appointmentDate: '2020-01-01', appointedFor: 'Normal Check Up', reportURL: "https://www.ada.org/~/media/ADA/Public%20Programs/Files/MPRG_Dental_Records.pdf?la=en"),
-    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
-    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
-    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
-  ];
+    ];
   @override
   void initState() {
     // TODO: implement initState
@@ -316,7 +313,7 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(20,10,20,10),
+                padding: const EdgeInsets.fromLTRB(20,10,20,0),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(

@@ -1,3 +1,4 @@
+import 'package:darpandentalhome/services/auth.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +103,15 @@ class _SignInState extends State<SignIn> {
                 elevation: 0,
                 shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                 color: Color(0xff4CBBB9),
-                onPressed: () {},
+                onPressed: () async {
+                  dynamic result = await _auth.signInAnon();
+                  if(result==null) {
+                    print('Error Sign In');
+                  } else {
+                    print('Signed In');
+                    print(result);
+                  }
+                },
                 child: Text(
                   'Sign In',
                     style: GoogleFonts.rubik(
