@@ -17,6 +17,9 @@ class _SignInState extends State<SignIn> {
 
   final AuthService _auth = AuthService();
 
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +64,11 @@ class _SignInState extends State<SignIn> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,10,20,10),
                       child: TextFormField(
+                        onChanged: (val) {
+                          setState(() {
+                            email = val;
+                          });
+                        },
                         style: GoogleFonts.rubik(
                           textStyle: TextStyle(
                             fontSize: 15,
@@ -84,6 +92,11 @@ class _SignInState extends State<SignIn> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(20,10,20,20),
                         child: TextFormField(
+                          onChanged: (val) {
+                            setState(() {
+                              password = val;
+                            });
+                          },
                             style: GoogleFonts.rubik(
                               textStyle: TextStyle(
                                 fontSize: 15,
@@ -123,30 +136,25 @@ class _SignInState extends State<SignIn> {
                     )
                 ),
               ),
-              SizedBox(height: 20,),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: MaterialButton(
-                  height: 55,
-                  minWidth: 230,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                  color: Color(0xffCE5B51),
-                  onPressed: () {
-                      widget.toggleView();
-                  },
-                  child: Text(
-                    'Register',
-                      style: GoogleFonts.rubik(
-                        textStyle: TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500
+              Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: InkWell(
+                      onTap: () {
+                        widget.toggleView();
+                      },
+                      child: Text(
+                        'Want a new account?',
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xffCE5B51),
+                          ),
                         ),
-                      )
-                  ),
-                ),
-              ),
+                      ),
+                    ),
+                  )
+              )
             ],
           ),
         ),
