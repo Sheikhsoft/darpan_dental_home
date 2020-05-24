@@ -1,3 +1,4 @@
+import 'package:darpandentalhome/services/auth.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +21,19 @@ class _RegisterState extends State<Register> {
   String password = '';
   String phoneNumber = '';
 
+  final _formKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Color(0xfff9f9f9),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Form(
+            key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -63,6 +70,7 @@ class _RegisterState extends State<Register> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(20,10,5,10),
                             child: TextFormField(
+                              validator: (val) => val.isEmpty ? 'Please enter your first name' : null,
                               onChanged: (val) {
                                 setState(() {
                                   firstName =val;
@@ -98,6 +106,7 @@ class _RegisterState extends State<Register> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(5,10,20,10),
                             child: TextFormField(
+                                validator: (val) => val.isEmpty ? 'Please enter your last name' : null,
                                 onChanged: (val) {
                                   setState(() {
                                     lastName =val;
@@ -131,6 +140,7 @@ class _RegisterState extends State<Register> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20,10,20,10),
                   child: TextFormField(
+                      validator: (val) => val.isEmpty ? 'Please enter your Email' : null,
                       onChanged: (val) {
                         setState(() {
                           email =val;
@@ -160,6 +170,7 @@ class _RegisterState extends State<Register> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20,10,20,10),
                   child: TextFormField(
+                      validator: (val) => val.length < 6 ? 'Please enter a password 6+ characters' : null,
                       onChanged: (val) {
                         setState(() {
                           password =val;
@@ -189,6 +200,7 @@ class _RegisterState extends State<Register> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20,10,20,10),
                   child: TextFormField(
+                      validator: (val) => val.length < 10 ? 'Please enter your phone number' : null,
                       onChanged: (val) {
                         setState(() {
                           phoneNumber =val;
@@ -212,7 +224,30 @@ class _RegisterState extends State<Register> {
                     elevation: 0,
                     shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                     color: Color(0xffCE5B51),
-                    onPressed: () {},
+                    onPressed: () async {
+                      if(_formKey.currentState.validate()){
+                        dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                        if(result == null) {
+                          _scaffoldKey.currentState.showSnackBar(
+                            SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              elevation: 5,
+                              duration: Duration(milliseconds: 800),
+                              backgroundColor: Color(0xffF60100),
+                              content: Text(
+                                  'Registration Declined',
+                                style: GoogleFonts.rubik(
+                                  textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18
+                                  ),
+                                )
+                              ),
+                            )
+                          );
+                        }
+                      }
+                    },
                     child: Text(
                       'Register',
                       style: GoogleFonts.rubik(
