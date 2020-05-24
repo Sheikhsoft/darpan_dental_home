@@ -17,6 +17,7 @@ class _SignInState extends State<SignIn> {
 
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
 
   String email = '';
   String password = '';
@@ -24,6 +25,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Color(0xfff9f9f9),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -66,6 +68,7 @@ class _SignInState extends State<SignIn> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,10,20,10),
                       child: TextFormField(
+                        validator: (val) => val.isEmpty ? "Please Enter your email" : null,
                         onChanged: (val) {
                           setState(() {
                             email = val;
@@ -94,6 +97,7 @@ class _SignInState extends State<SignIn> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(20,10,20,20),
                         child: TextFormField(
+                          validator: (val) => val.length<6 ? "Please enter a password 6+ character" : null,
                           onChanged: (val) {
                             setState(() {
                               password = val;
@@ -119,12 +123,27 @@ class _SignInState extends State<SignIn> {
                 shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                 color: Color(0xff4CBBB9),
                 onPressed: () async {
-                  dynamic result = await _auth.signInAnon();
-                  if(result==null) {
-                    print('Error Sign In');
-                  } else {
-                    print('Signed In');
-                    print(result.uid);
+                  if(_formKey.currentState.validate()){
+                    dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                    if(result==null) {
+                      _scaffoldKey.currentState.showSnackBar(
+                          SnackBar(
+                            behavior: SnackBarBehavior.floating,
+                            elevation: 5,
+                            duration: Duration(milliseconds: 800),
+                            backgroundColor: Color(0xffF60100),
+                            content: Text(
+                                'Error Signing In',
+                                style: GoogleFonts.rubik(
+                                  textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18
+                                  ),
+                                )
+                            ),
+                          )
+                      );
+                    }
                   }
                 },
                 child: Text(
