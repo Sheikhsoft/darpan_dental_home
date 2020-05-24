@@ -1,6 +1,5 @@
 import 'package:darpandentalhome/services/auth.dart';
 import 'package:darpandentalhome/shared/const.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,38 +18,47 @@ class _SignInState extends State<SignIn> {
   final _formKey = GlobalKey<FormState>();
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
 
+
   String email = '';
   String password = '';
+  final FocusScopeNode _node = FocusScopeNode();
+
+  @override
+  void dispose() {
+    _node.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Color(0xfff9f9f9),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
-                width: MediaQuery. of(context). size. width,
-                child: Image.asset('assets/images/Illustration.png', fit: BoxFit.contain,),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Text(
-                    'Darpan Dental Home',
-                    style: GoogleFonts.rubik(
-                      textStyle: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.w500
-                      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MediaQuery. of(context). size. width,
+              child: Image.asset('assets/images/Illustration.png', fit: BoxFit.contain,),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  'Darpan Dental Home',
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w500
                     ),
                   ),
                 ),
               ),
-              Form(
-                key: _formKey,
+            ),
+            Form(
+              key: _formKey,
+              child: FocusScope(
+                node: _node,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -68,6 +76,8 @@ class _SignInState extends State<SignIn> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,10,20,10),
                       child: TextFormField(
+                        textInputAction: TextInputAction.next,
+                        onEditingComplete: _node.nextFocus,
                         validator: (val) => val.isEmpty ? "Please Enter your email" : null,
                         onChanged: (val) {
                           setState(() {
@@ -97,6 +107,7 @@ class _SignInState extends State<SignIn> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(20,10,20,20),
                         child: TextFormField(
+                            textInputAction: TextInputAction.done,
                           validator: (val) => val.length<6 ? "Please enter a password 6+ character" : null,
                           onChanged: (val) {
                             setState(() {
@@ -116,68 +127,68 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
               ),
-              MaterialButton(
-                height: 55,
-                minWidth: 230,
-                elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                color: Color(0xff4CBBB9),
-                onPressed: () async {
-                  if(_formKey.currentState.validate()){
-                    dynamic result = await _auth.signInWithEmailAndPassword(email, password);
-                    if(result==null) {
-                      _scaffoldKey.currentState.showSnackBar(
-                          SnackBar(
-                            behavior: SnackBarBehavior.floating,
-                            elevation: 5,
-                            duration: Duration(milliseconds: 800),
-                            backgroundColor: Color(0xffF60100),
-                            content: Text(
-                                'Error Signing In',
-                                style: GoogleFonts.rubik(
-                                  textStyle: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18
-                                  ),
-                                )
-                            ),
-                          )
-                      );
-                    }
-                  }
-                },
-                child: Text(
-                  'Sign In',
-                    style: GoogleFonts.rubik(
-                      textStyle: TextStyle(
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500
-                      ),
-                    )
-                ),
-              ),
-              Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: InkWell(
-                      onTap: () {
-                        widget.toggleView();
-                      },
-                      child: Text(
-                        'Want a new account?',
-                        style: GoogleFonts.rubik(
-                          textStyle: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xffCE5B51),
+            ),
+            MaterialButton(
+              height: 55,
+              minWidth: 230,
+              elevation: 0,
+              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+              color: Color(0xff4CBBB9),
+              onPressed: () async {
+                if(_formKey.currentState.validate()){
+                  dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                  if(result==null) {
+                    _scaffoldKey.currentState.showSnackBar(
+                        SnackBar(
+                          behavior: SnackBarBehavior.floating,
+                          elevation: 5,
+                          duration: Duration(milliseconds: 800),
+                          backgroundColor: Color(0xffF60100),
+                          content: Text(
+                              'Error Signing In',
+                              style: GoogleFonts.rubik(
+                                textStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18
+                                ),
+                              )
                           ),
+                        )
+                    );
+                  }
+                }
+              },
+              child: Text(
+                'Sign In',
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500
+                    ),
+                  )
+              ),
+            ),
+            Center(
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: InkWell(
+                    onTap: () {
+                      widget.toggleView();
+                    },
+                    child: Text(
+                      'Want a new account?',
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xffCE5B51),
                         ),
                       ),
                     ),
-                  )
-              )
-            ],
-          ),
+                  ),
+                )
+            ),
+          ],
         ),
       ),
     );
