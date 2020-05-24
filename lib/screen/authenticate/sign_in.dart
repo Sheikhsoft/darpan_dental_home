@@ -21,13 +21,6 @@ class _SignInState extends State<SignIn> {
 
   String email = '';
   String password = '';
-  final FocusScopeNode _node = FocusScopeNode();
-
-  @override
-  void dispose() {
-    _node.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,75 +50,69 @@ class _SignInState extends State<SignIn> {
             ),
             Form(
               key: _formKey,
-              child: FocusScope(
-                node: _node,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Padding(
-                        padding: const EdgeInsets.fromLTRB(25,10,20,0),
-                        child: Text(
-                          'Email:',
-                          style: GoogleFonts.rubik(
-                            textStyle: TextStyle(
-                                fontSize: 18,
-                            ),
-                          )
-                        )
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20,10,20,10),
-                      child: TextFormField(
-                        textInputAction: TextInputAction.next,
-                        onEditingComplete: _node.nextFocus,
-                        validator: (val) => val.isEmpty ? "Please Enter your email" : null,
-                        onChanged: (val) {
-                          setState(() {
-                            email = val;
-                          });
-                        },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                      child: Text(
+                        'Email:',
                         style: GoogleFonts.rubik(
                           textStyle: TextStyle(
-                            fontSize: 15,
+                              fontSize: 18,
                           ),
-                        ),
-                        cursorColor: Colors.black,
-                        decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com'),
-                      ),
-                    ),
-                    Padding(
-                        padding: const EdgeInsets.fromLTRB(25,10,20,0),
-                        child: Text(
-                          'Password:',
-                            style: GoogleFonts.rubik(
-                              textStyle: TextStyle(
-                                fontSize: 18,
-                              ),
-                            )
                         )
-                    ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(20,10,20,20),
-                        child: TextFormField(
-                            textInputAction: TextInputAction.done,
-                          validator: (val) => val.length<6 ? "Please enter a password 6+ character" : null,
-                          onChanged: (val) {
-                            setState(() {
-                              password = val;
-                            });
-                          },
-                            style: GoogleFonts.rubik(
-                              textStyle: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                            obscureText: true,
-                            cursorColor: Colors.black,
-                            decoration: textInputDecoration.copyWith(hintText: '**********')
+                      )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20,10,20,10),
+                    child: TextFormField(
+                      validator: (val) => val.isEmpty ? "Please Enter your email" : null,
+                      onChanged: (val) {
+                        setState(() {
+                          email = val;
+                        });
+                      },
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontSize: 15,
                         ),
-                    )
-                  ],
-                ),
+                      ),
+                      cursorColor: Colors.black,
+                      decoration: textInputDecoration.copyWith(hintText: 'sanjivgurung@gmail.com'),
+                    ),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(25,10,20,0),
+                      child: Text(
+                        'Password:',
+                          style: GoogleFonts.rubik(
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                            ),
+                          )
+                      )
+                  ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20,10,20,20),
+                      child: TextFormField(
+                        validator: (val) => val.length<6 ? "Please enter a password 6+ character" : null,
+                        onChanged: (val) {
+                          setState(() {
+                            password = val;
+                          });
+                        },
+                          style: GoogleFonts.rubik(
+                            textStyle: TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
+                          obscureText: true,
+                          cursorColor: Colors.black,
+                          decoration: textInputDecoration.copyWith(hintText: '**********')
+                      ),
+                  )
+                ],
               ),
             ),
             MaterialButton(
