@@ -5,6 +5,7 @@ import 'package:darpandentalhome/screen/home/card_class.dart';
 import 'package:darpandentalhome/services/auth.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
@@ -61,12 +62,7 @@ class _HomeState extends State<Home> {
                   Container(
                     height: 300,
                     child: DrawerHeader(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.contain,
-                          image: AssetImage('assets/images/Illustration.png')
-                        ),
-                      ),
+                      child: SvgPicture.asset('assets/images/Illustration.svg', fit: BoxFit.cover,),
                     ),
                   ),
                   Padding(

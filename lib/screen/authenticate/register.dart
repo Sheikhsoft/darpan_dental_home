@@ -51,7 +51,7 @@ class _RegisterState extends State<Register> {
                       )
                   ),
                 ),
-                loading ? Loading() : SizedBox(height: 6,),
+                loading ? Loading() : SizedBox(height: 6),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -73,6 +73,8 @@ class _RegisterState extends State<Register> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(20,10,5,10),
                             child: TextFormField(
+                              textInputAction: TextInputAction.next,
+                              onEditingComplete: () => FocusScope.of(context).nextFocus(),
                               validator: (val) => val.isEmpty ? 'Please enter your first name' : null,
                               onChanged: (val) {
                                 setState(() {
@@ -109,6 +111,8 @@ class _RegisterState extends State<Register> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(5,10,20,10),
                             child: TextFormField(
+                                textInputAction: TextInputAction.next,
+                                onEditingComplete: () => FocusScope.of(context).nextFocus(),
                                 validator: (val) => val.isEmpty ? 'Please enter your last name' : null,
                                 onChanged: (val) {
                                   setState(() {
@@ -143,6 +147,8 @@ class _RegisterState extends State<Register> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20,10,20,10),
                   child: TextFormField(
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => FocusScope.of(context).nextFocus(),
                       validator: (val) => val.isEmpty ? 'Please enter your Email' : null,
                       onChanged: (val) {
                         setState(() {
@@ -173,6 +179,8 @@ class _RegisterState extends State<Register> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20,10,20,10),
                   child: TextFormField(
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => FocusScope.of(context).nextFocus(),
                       validator: (val) => val.length < 6 ? 'Please enter a password 6+ characters' : null,
                       onChanged: (val) {
                         setState(() {
@@ -203,7 +211,8 @@ class _RegisterState extends State<Register> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20,10,20,10),
                   child: TextFormField(
-                      validator: (val) => val.length < 10 ? 'Please enter your phone number' : null,
+                      textInputAction: TextInputAction.done,
+                      validator: (val) => val.length < 10 || val.length > 10 ? 'Please enter your phone number' : null,
                       onChanged: (val) {
                         setState(() {
                           phoneNumber =val;

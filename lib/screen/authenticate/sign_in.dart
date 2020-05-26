@@ -3,6 +3,7 @@ import 'package:darpandentalhome/shared/const.dart';
 import 'package:darpandentalhome/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -35,7 +36,7 @@ class _SignInState extends State<SignIn> {
           children: <Widget>[
             Container(
               width: MediaQuery. of(context). size. width,
-              child: Image.asset('assets/images/Illustration.png', fit: BoxFit.contain,),
+              child: SvgPicture.asset('assets/images/Illustration.svg', fit: BoxFit.cover,),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -51,7 +52,7 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
             ),
-            loading ? Loading() : SizedBox(height: 6,),
+            loading ? Loading() : SizedBox(height: 6),
             Form(
               key: _formKey,
               child: Column(
@@ -71,6 +72,8 @@ class _SignInState extends State<SignIn> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20,10,20,10),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => FocusScope.of(context).nextFocus(),
                       validator: (val) => val.isEmpty ? "Please Enter your email" : null,
                       onChanged: (val) {
                         setState(() {
@@ -100,6 +103,7 @@ class _SignInState extends State<SignIn> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,10,20,20),
                       child: TextFormField(
+                        textInputAction: TextInputAction.done,
                         validator: (val) => val.length<6 ? "Please enter a password 6+ character" : null,
                         onChanged: (val) {
                           setState(() {
@@ -113,7 +117,7 @@ class _SignInState extends State<SignIn> {
                           ),
                           obscureText: true,
                           cursorColor: Colors.black,
-                          decoration: textInputDecoration.copyWith(hintText: '**********')
+                          decoration: textInputDecoration.copyWith(hintText: '**********'),
                       ),
                   )
                 ],
