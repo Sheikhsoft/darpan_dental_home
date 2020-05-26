@@ -1,5 +1,6 @@
 import 'package:darpandentalhome/services/auth.dart';
 import 'package:darpandentalhome/shared/const.dart';
+import 'package:darpandentalhome/shared/loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +21,7 @@ class _RegisterState extends State<Register> {
   String email = '';
   String password = '';
   String phoneNumber = '';
+  bool loading = false;
 
   final _formKey = GlobalKey<FormState>();
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
@@ -49,6 +51,7 @@ class _RegisterState extends State<Register> {
                       )
                   ),
                 ),
+                loading ? Loading() : SizedBox(height: 6,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -226,20 +229,27 @@ class _RegisterState extends State<Register> {
                     color: Color(0xffCE5B51),
                     onPressed: () async {
                       if(_formKey.currentState.validate()){
+                        setState(() {
+                          loading = true;
+                        });
                         dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                         if(result == null) {
+                          setState(() {
+                            loading = false;
+                          });
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,
-                              elevation: 5,
+                              elevation: 1,
                               duration: Duration(milliseconds: 800),
-                              backgroundColor: Color(0xffF60100),
+                              backgroundColor: Colors.red[700],
                               content: Text(
                                   'Registration Declined',
                                 style: GoogleFonts.rubik(
                                   textStyle: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18
+                                      fontSize: 18,
+                                    letterSpacing: 1.5
                                   ),
                                 )
                               ),
