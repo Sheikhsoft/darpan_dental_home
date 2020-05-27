@@ -38,8 +38,13 @@ class _HomeState extends State<Home> {
     });
     _scaffoldKey.currentState.showBottomSheet((context) {
       return Container(
-        decoration: boxDecoration.copyWith(borderRadius: BorderRadius.all(
-            Radius.circular(20))),
+        decoration: BoxDecoration(
+            color: Colors.white,
+          borderRadius: BorderRadius.only( topRight: Radius.circular(10), topLeft: Radius.circular(10)),
+          boxShadow: [BoxShadow(
+            blurRadius: 10, spreadRadius: 7, color: Colors.grey
+          )]
+        ),
         padding: EdgeInsets.fromLTRB(10,0,10,0),
         child: SingleChildScrollView(
           child: AppointmentForm(appointedFor: appointedFor,appointedDoctor: appointedDoctor,),
