@@ -249,7 +249,7 @@ class _RegisterState extends State<Register> {
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,
-                              elevation: 1,
+                              elevation: 0,
                               duration: Duration(milliseconds: 800),
                               backgroundColor: Colors.red[700],
                               content: Text(

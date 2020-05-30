@@ -22,7 +22,6 @@ class _SignInState extends State<SignIn> {
 
   bool loading = false;
 
-
   String email = '';
   String password = '';
 
@@ -142,7 +141,7 @@ class _SignInState extends State<SignIn> {
                     _scaffoldKey.currentState.showSnackBar(
                         SnackBar(
                           behavior: SnackBarBehavior.floating,
-                          elevation: 1,
+                          elevation: 0,
                           duration: Duration(milliseconds: 800),
                           backgroundColor: Colors.red[700],
                           content: Text(
@@ -173,7 +172,7 @@ class _SignInState extends State<SignIn> {
             ),
             Center(
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(top: 10, bottom: 10),
                   child: InkWell(
                     onTap: () {
                       widget.toggleView();

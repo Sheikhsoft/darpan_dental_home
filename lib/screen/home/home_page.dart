@@ -3,7 +3,6 @@ import 'package:darpandentalhome/presentation/custom_icons.dart';
 import 'package:darpandentalhome/screen/home/appointment_form.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';
 import 'package:darpandentalhome/services/auth.dart';
-import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,7 +41,7 @@ class _HomeState extends State<Home> {
             color: Colors.white,
           borderRadius: BorderRadius.only( topRight: Radius.circular(10), topLeft: Radius.circular(10)),
           boxShadow: [BoxShadow(
-            blurRadius: 10, spreadRadius: 7, color: Colors.grey
+            blurRadius: 10, spreadRadius: 7, color: Colors.grey[400]
           )]
         ),
         padding: EdgeInsets.fromLTRB(10,0,10,0),
@@ -71,13 +70,15 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Text(
-                      'Darpan Dental Home',
-                      style: GoogleFonts.rubik(
-                        textStyle: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500
+                    padding: const EdgeInsets.only(left: 10, top: 10),
+                    child: Center(
+                      child: Text(
+                        'Darpan Dental Home',
+                        style: GoogleFonts.rubik(
+                          textStyle: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500
+                          ),
                         ),
                       ),
                     ),
@@ -137,204 +138,201 @@ class _HomeState extends State<Home> {
       key: _scaffoldKey,
       backgroundColor: Color(0xfff9f9f9),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 10,0,0),
-                  child: IconButton(
-                    iconSize: 35,
-                    icon: Icon(Icons.menu,color: Color(0xff4CBBB9)),
-                    onPressed: () {
-                      _scaffoldKey.currentState.openDrawer();
-                    },
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 20, top: 20),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.grey,
-                      radius: 30,
-                    child: InkWell(
-                      onTap: () {},
-                      child: Text(
-                          'S',
-                        style: GoogleFonts.rubik(
-                          textStyle: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black
-                          ),
-                        )
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text(
-                'Book Appointment for:',
-                style: GoogleFonts.rubik(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
-                      fontSize: 20
-                  ),
-                )
-              ),
-            ),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          appointedFor = "Dental";
-                          appointedDoctor = "Dr. Sachin Lama";
-                        });
-                        showAppointmentForm();
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 10,0,0),
+                    child: IconButton(
+                      iconSize: 35,
+                      icon: Icon(Icons.menu,color: Color(0xff4CBBB9)),
+                      onPressed: () {
+                        _scaffoldKey.currentState.openDrawer();
                       },
-                      child: Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20)
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(30),
-                          child: Center(
-                            child: Container(
-                              child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    width: 90,
-                                    height: 90,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffDBE5FE),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(20)
-                                      ),
-                                    ),
-                                    child: Icon(MyCustomIcons.teeth,size: 40,color: Color(0xff4B7FFB)),
-                                  ),
-                                  SizedBox(height: 20,),
-                                  Text(
-                                    'Dental',
-                                    style: GoogleFonts.rubik(
-                                      textStyle: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                          fontSize: 13
-                                      ),
-                                    )
-                                  )
-                                ],
-                              )
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                   ),
-                  SizedBox(width: 20,),
-                  Flexible(
-                    flex: 1,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          appointedFor = "Normal Check Up";
-                          appointedDoctor = "Dr. Saurab Adhikari";
-                        });
-                        showAppointmentForm();
-                      },
-                      child: Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(20)
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(30),
-                          child: Center(
-                            child: Container(
-                                child: Column(
-                                  children: <Widget>[
-                                    Container(
-                                      width: 90,
-                                      height: 90,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xffFFEFE1),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20)
-                                        ),
-                                      ),
-                                      child: Icon(MyCustomIcons.heart,size: 40,color: Color(0xffFFB167),),
-                                    ),
-                                    SizedBox(height: 20,),
-                                    Text(
-                                      'Normal \n Check Up',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.rubik(
-                                        textStyle: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 13
-                                        ),
-                                      )
-                                    )
-                                  ],
-                                )
+                  Container(
+                    margin: EdgeInsets.only(right: 20, top: 20),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.grey,
+                        radius: 30,
+                      child: InkWell(
+                        onTap: () {},
+                        child: Text(
+                            'S',
+                          style: GoogleFonts.rubik(
+                            textStyle: TextStyle(
+                                fontSize: 36,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black
                             ),
-                          ),
+                          )
                         ),
                       ),
                     ),
                   )
                 ],
               ),
-            ),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text(
-                'Appointment History',
-                style: GoogleFonts.rubik(
-                  textStyle: TextStyle(
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  'Book Appointment for:',
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 20
-                  ),
-                )
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20,10,20,0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: appointments.map((appointments) {
-                      setState(() {
-                        number=number+1;
-                      });
-                      return CardClass(appointments: appointments,number: number,);
-                    }
-                    ).toList(),
-                  ),
+                        fontSize: 20
+                    ),
+                  )
                 ),
               ),
-            )
-          ],
+              SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Row(
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            appointedFor = "Dental";
+                            appointedDoctor = "Dr. Sachin Lama";
+                          });
+                          showAppointmentForm();
+                        },
+                        child: Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20)
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Center(
+                              child: Container(
+                                child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 90,
+                                      height: 90,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffDBE5FE),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)
+                                        ),
+                                      ),
+                                      child: Icon(MyCustomIcons.teeth,size: 40,color: Color(0xff4B7FFB)),
+                                    ),
+                                    SizedBox(height: 20,),
+                                    Text(
+                                      'Dental',
+                                      style: GoogleFonts.rubik(
+                                        textStyle: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                            fontSize: 13
+                                        ),
+                                      )
+                                    )
+                                  ],
+                                )
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20,),
+                    Flexible(
+                      flex: 1,
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            appointedFor = "Normal Check Up";
+                            appointedDoctor = "Dr. Saurab Adhikari";
+                          });
+                          showAppointmentForm();
+                        },
+                        child: Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(20)
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Center(
+                              child: Container(
+                                  child: Column(
+                                    children: <Widget>[
+                                      Container(
+                                        width: 90,
+                                        height: 90,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffFFEFE1),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20)
+                                          ),
+                                        ),
+                                        child: Icon(MyCustomIcons.heart,size: 40,color: Color(0xffFFB167),),
+                                      ),
+                                      SizedBox(height: 20,),
+                                      Text(
+                                        'Normal \n Check Up',
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.rubik(
+                                          textStyle: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 13
+                                          ),
+                                        )
+                                      )
+                                    ],
+                                  )
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  'Appointment History',
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20
+                    ),
+                  )
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20,10,20,0),
+                child: Column(
+                  children: appointments.map((appointments) {
+                    setState(() {
+                      number=number+1;
+                    });
+                    return CardClass(appointments: appointments,number: number,);
+                  }
+                  ).toList(),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

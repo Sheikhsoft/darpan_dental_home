@@ -68,7 +68,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
               )
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,10,20,10),
+            padding: const EdgeInsets.all(10),
             child: TextFormField(
               style: GoogleFonts.rubik(
                 textStyle: TextStyle(
@@ -91,7 +91,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
               )
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,10,20,10),
+            padding: const EdgeInsets.all(10),
             child: TextFormField(
               style: GoogleFonts.rubik(
                 textStyle: TextStyle(
@@ -114,7 +114,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
               )
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,10,20,10),
+            padding: const EdgeInsets.all(10),
             child: InkWell(
               onTap: () async {
                 final selectedDate = await _selectedDate(context);
@@ -156,7 +156,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
               )
           ),
           Padding(
-              padding: const EdgeInsets.fromLTRB(20,10,20,10),
+              padding: const EdgeInsets.all(10),
               child: Container(
                   decoration: boxDecoration.copyWith(color: Color(0xfff2f2f3),),
                   height: 60,
@@ -189,7 +189,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
               )
           ),
           Padding(
-              padding: const EdgeInsets.fromLTRB(20,10,20,10),
+              padding: const EdgeInsets.all(10),
               child: Container(
                   decoration: boxDecoration.copyWith(color: Color(0xfff2f2f3),),
                   height: 60,

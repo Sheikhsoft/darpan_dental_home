@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loading_animations/loading_animations.dart';
 
 class Loading extends StatelessWidget{
   @override
