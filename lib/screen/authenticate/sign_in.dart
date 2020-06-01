@@ -34,7 +34,6 @@ class _SignInState extends State<SignIn> {
         child: Column(
           children: <Widget>[
             Container(
-              width: MediaQuery. of(context). size. width,
               child: SvgPicture.asset('assets/images/Illustration.svg', fit: BoxFit.cover,),
             ),
             Padding(

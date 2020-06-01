@@ -1,4 +1,4 @@
-import 'file:///C:/Users/DELL/Desktop/Flutter/darpan_dental_home/lib/services/api_for_report.dart';
+import 'package:darpandentalhome/services/api_for_report.dart';
 import 'package:darpandentalhome/shared/loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +16,6 @@ class Report extends StatefulWidget {
 }
 
 class _ReportState extends State<Report> {
-
-  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-  new GlobalKey<RefreshIndicatorState>();
 
   String path;
 

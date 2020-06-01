@@ -1,4 +1,3 @@
 flutter_native_splash:
   image: assets/images/Illustration.png
   color: "F6F6F6"
-  fill: false
