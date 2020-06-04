@@ -4,7 +4,9 @@ import 'package:darpandentalhome/screen/home/appointment_form.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';
 import 'package:darpandentalhome/screen/profile/profile.dart';
 import 'package:darpandentalhome/services/auth.dart';
+import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_holo_date_picker/flutter_holo_date_picker.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -96,6 +98,72 @@ class _HomeState extends State<Home> {
                         )
                       ),
                     ),
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          contentPadding: EdgeInsets.zero,
+                          title: Row(
+                            children: <Widget>[
+                              Text(
+                                  'Rate',
+                                style: GoogleFonts.rubik(
+                                    textStyle: TextStyle(
+                                        fontSize: 24,
+                                    )
+                                ),
+                              ),
+                              SizedBox(width: 80,),
+                              Icon(Icons.star_border, color: Colors.green, size: 30,),
+                              Icon(Icons.star_border, color: Colors.green, size: 30,),
+                              Icon(Icons.star_border, color: Colors.green, size: 30,),
+                              Icon(Icons.star_border, color: Colors.green, size: 30,),
+                              Icon(Icons.star_border, color: Colors.green, size: 30,),
+                            ],
+                          ),
+                          content: Container(
+                            height: 300,
+                            width: MediaQuery.of(context).size.width/1.1,
+                            decoration: boxDecoration.copyWith(color: Colors.white),
+                            child: Padding(
+                              padding: const EdgeInsets.all(25.0),
+                              child: Text(
+                                'Add your feedback',
+                                style: GoogleFonts.rubik(
+                                    textStyle: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.grey
+                                    )
+                                ),
+                              ),
+                            ),
+                          ),
+                          actions: <Widget>[
+                            FlatButton(child: Text(
+                                'Close',
+                              style: GoogleFonts.rubik(
+                                  textStyle: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.red
+                                  )
+                              ),
+                            ),),
+                            FlatButton(child: Text(
+                              'Submit',
+                              style: GoogleFonts.rubik(
+                                  textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.green
+                                  )
+                              ),
+                            ),),
+                          ],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                          ),
+                        )
+                      );
+                    },
                   ),
                   ListTile(
                     leading: Icon(Icons.notifications_active, color: Colors.amber,),
@@ -108,6 +176,62 @@ class _HomeState extends State<Home> {
                           )
                       ),
                     ),
+                    onTap: ()  {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            contentPadding: EdgeInsets.zero,
+                            title: Row(
+                              children: <Widget>[
+                                Text(
+                                  'Add your reminder Title',
+                                  style: GoogleFonts.rubik(
+                                      textStyle: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.grey
+                                      )
+                                  ),
+                                ),
+                              ],
+                            ),
+                            content: Container(
+                              width: MediaQuery.of(context).size.width/1.1,
+                              child: DatePickerWidget(
+                                looping: false,   // default is not looping
+                                firstDate: DateTime(2019),
+                                lastDate: DateTime(2022, 1, 1),
+                                initialDate: DateTime(2020),
+                                dateFormat: "dd-MMMM-yyyy",
+                                pickerTheme: DateTimePickerTheme(
+                                    itemTextStyle: TextStyle(color: Colors.black, fontSize: 19)),
+                              ),
+                            ),
+                            actions: <Widget>[
+                              FlatButton(child: Text(
+                                'Close',
+                                style: GoogleFonts.rubik(
+                                    textStyle: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.red
+                                    )
+                                ),
+                              ),),
+                              FlatButton(child: Text(
+                                'Set Reminder',
+                                style: GoogleFonts.rubik(
+                                    textStyle: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.green
+                                    )
+                                ),
+                              ),),
+                            ],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(10))
+                            ),
+                          )
+                      );
+                    },
                   ),
                 ],
               ),
