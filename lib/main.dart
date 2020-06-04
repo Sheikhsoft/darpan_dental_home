@@ -8,7 +8,6 @@ import 'package:provider/provider.dart';
 void main() => runApp(MaterialApp(
   home: Main(),
   debugShowCheckedModeBanner: false,
-
 ));
 
 class Main extends StatelessWidget {
@@ -17,13 +16,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<User>.value(
       value: AuthService().user,
-      child: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overScroll) {
-          overScroll.disallowGlow();
-          return false;
-        },
-        child: Wrapper(),
-      ),
+      child: Wrapper(),
     );
   }
 }
