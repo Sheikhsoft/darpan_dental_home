@@ -118,7 +118,7 @@ class _ProfileState extends State<Profile> {
                             ),
                           ],
                         ),
-                        Divider(thickness: 0.5,height: 35,)
+                        Divider(thickness: 0.4,height: 35, indent: 20, endIndent: 20,)
                       ],
                     ),
                   ),

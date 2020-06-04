@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 Dialog paymentSuccess = Dialog(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -16,8 +17,12 @@ Dialog paymentSuccess = Dialog(
           child: Center(
             child: Column(
               children: <Widget>[
-                SizedBox(height: 15,),
-                Image.asset('assets/images/Success.png'),
+                SizedBox(height: 25,),
+                Container(
+                  height: 90,
+                    width: 90,
+                    child: SvgPicture.asset('assets/images/tick.svg')
+                ),
                 SizedBox(height: 20,),
                 Text(
                     'Transaction Successful',

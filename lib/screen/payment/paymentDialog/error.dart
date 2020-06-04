@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 Dialog paymentError = Dialog(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -17,7 +18,11 @@ Dialog paymentError = Dialog(
             child: Column(
               children: <Widget>[
                 SizedBox(height: 30,),
-                Image.asset('assets/images/error.png'),
+                Container(
+                    height: 80,
+                    width: 80,
+                    child: SvgPicture.asset('assets/images/cross.svg')
+                ),
                 SizedBox(height: 20,),
                 Text(
                   'Transaction Failed',

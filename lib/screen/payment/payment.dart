@@ -5,6 +5,7 @@ import 'package:darpandentalhome/screen/payment/paymentDialog/successful.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Payment extends StatefulWidget {
@@ -103,9 +104,9 @@ class _PaymentState extends State<Payment> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Container(
-                              height: 60,
-                              width: 60,
-                              child: Image.asset('assets/icons/credit.png'),
+                              height: 30,
+                              width: 30,
+                              child: SvgPicture.asset('assets/icons/credit.svg',color: Colors.white,)
                             ),
                             SizedBox(width: 10,),
                             Text(
@@ -150,7 +151,7 @@ class _PaymentState extends State<Payment> {
                             Container(
                               height: 60,
                               width: 60,
-                              child: Image.asset('assets/icons/eSewa.png'),
+                              child: SvgPicture.asset('assets/icons/eSewa.svg'),
                             ),
                             SizedBox(width: 10,),
                             Text(
