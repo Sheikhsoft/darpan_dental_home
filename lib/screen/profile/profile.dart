@@ -18,9 +18,7 @@ class _ProfileState extends State<Profile> {
           child: Column(
             children: <Widget>[
               SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
+              Stack(
                 children: <Widget>[
                   IconButton(
                     icon: Icon(Icons.arrow_back_ios,color: Colors.black,size: 25,),
@@ -28,27 +26,29 @@ class _ProfileState extends State<Profile> {
                       Navigator.pop(context);
                     },
                   ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      padding: EdgeInsets.only(top: 15),
+                      child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 70,
+                          child: Icon(
+                            Icons.perm_identity,
+                            color: Colors.grey,
+                            size: 45,
+                          )
+                      ),
+                    ),
+                  ),
                 ],
-              ),
-              Container(
-                height: 120,
-                width: 120,
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 30,
-                  child: Icon(
-                    Icons.perm_identity,
-                    color: Colors.grey,
-                    size: 45,
-                  )
-                ),
               ),
               SizedBox(height: 25,),
               Stack(
                 overflow: Overflow.visible,
                 children: <Widget>[
                   Container(
-                    height: 255,
+                    height: 280,
                     width: MediaQuery.of(context).size.width / 1.1,
                     decoration: boxDecoration.copyWith(color: Colors.grey[200]),
                     child: Column(
@@ -99,7 +99,7 @@ class _ProfileState extends State<Profile> {
                                 )
                             ),
                           ],
-                        ),SizedBox(height: 10,),
+                        ),SizedBox(height: 15,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
@@ -118,6 +118,7 @@ class _ProfileState extends State<Profile> {
                             ),
                           ],
                         ),
+                        Divider(thickness: 0.5,height: 35,)
                       ],
                     ),
                   ),
@@ -221,29 +222,6 @@ class _ProfileState extends State<Profile> {
                           SizedBox(width: 20,),
                           Text(
                               'Terms and Policies',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.rubik(
-                                textStyle: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.grey[800]
-
-                                ),
-                              )
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20,),
-                    Container(
-                      height: 60,
-                      padding: EdgeInsets.only(left: 20),
-                      decoration: boxDecoration.copyWith(color: Colors.white),
-                      child: Row(
-                        children: <Widget>[
-                          Icon(Icons.language),
-                          SizedBox(width: 20,),
-                          Text(
-                              'Language',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.rubik(
                                 textStyle: TextStyle(

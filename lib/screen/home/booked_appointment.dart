@@ -243,7 +243,7 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
               Center(
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 20),
