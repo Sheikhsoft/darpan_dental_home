@@ -2,7 +2,6 @@ import 'package:darpandentalhome/model/appoitment.dart';
 import 'package:darpandentalhome/presentation/custom_icons.dart';
 import 'package:darpandentalhome/screen/home/appointment_form.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';
-import 'package:darpandentalhome/screen/profile/profile.dart';
 import 'package:darpandentalhome/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -164,9 +163,6 @@ class _HomeState extends State<Home> {
                         radius: 30,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => Profile(),
-                          ));
                         },
                         child: Text(
                             'S',
