@@ -15,11 +15,10 @@ class Payment extends StatefulWidget {
 class _PaymentState extends State<Payment> {
 
   bool showCardForm = true;
+  bool success = true;
 
   @override
   Widget build(BuildContext context) {
-
-    bool success = true;
 
     return Scaffold(
       backgroundColor: Color(0xfff9f9f9),
@@ -29,20 +28,31 @@ class _PaymentState extends State<Payment> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
-                child: Text(
-                  'Payment',
-                  style: GoogleFonts.rubik(
-                    textStyle: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w500
-                    ),
-                  )
-                ),
+              SizedBox(height: 15,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.arrow_back_ios,color: Colors.black,size: 25,),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  SizedBox(width: 20,),
+                  Text(
+                      'Payment',
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.w500
+                        ),
+                      )
+                  ),
+                ],
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20,10,20,10),
+                padding: const EdgeInsets.fromLTRB(20,20,20,10),
                 child: Container(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                   decoration: boxDecoration,
@@ -174,6 +184,9 @@ class _PaymentState extends State<Payment> {
                           context: context,
                         builder: (BuildContext context) => success ? paymentSuccess : paymentError
                       );
+                      setState(() {
+                        success=!success;
+                      });
                     },
                     child: Text(
                       'Pay Now',

@@ -1,4 +1,5 @@
 import 'file:///C:/Users/DELL/Desktop/Flutter/darpan_dental_home/lib/model/appoitment.dart';
+import 'package:darpandentalhome/screen/payment/payment.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -226,7 +227,14 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                   elevation: 0,
                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                   color: Color(0xff4CAB50),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Payment()
+                      )
+                    );
+                  },
                   child: Text(
                     'Request Payment',
                     style: GoogleFonts.rubik(
@@ -245,7 +253,9 @@ class _BookedAppointmentState extends State<BookedAppointment> {
                     elevation: 0,
                     shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
                     color: Color(0xffCE5B51),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     child: Text(
                       'Cancel Appointment',
                       style: GoogleFonts.rubik(

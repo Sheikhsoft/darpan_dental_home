@@ -209,7 +209,6 @@ class _ProfileState extends State<Profile> {
               Container(
                 padding: EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width / 1.1,
-                decoration: boxDecoration.copyWith(color: Colors.grey[200]),
                 child: Column(
                   children: <Widget>[
                     Container(

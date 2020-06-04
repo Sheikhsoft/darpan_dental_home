@@ -1,3 +1,4 @@
+import 'package:darpandentalhome/screen/home/booked_appointment.dart';
 import 'package:darpandentalhome/shared/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -216,7 +217,15 @@ class _AppointmentFormState extends State<AppointmentForm> {
               elevation: 0,
               shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
               color: Color(0xff4CBBB9),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BookedAppointment()
+                  )
+                );
+              },
               child: Text(
                 'Book Now',
                 style: TextStyle(fontFamily: 'Rubik', fontSize: 15, color: Colors.white),
