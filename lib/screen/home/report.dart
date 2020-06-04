@@ -35,29 +35,27 @@ class _ReportState extends State<Report> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        centerTitle: true,
         title: Text(
             'Report',
           style: GoogleFonts.rubik(
             textStyle: TextStyle(
               color: Colors.black,
-              fontWeight: FontWeight.w500
+              fontWeight: FontWeight.w500,
+              fontSize: 28
             )
           ),
         ),
         leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios,color: Colors.black,),
+            icon: Icon(Icons.arrow_back_ios,color: Colors.black,size: 25,),
           onPressed: () {
               Navigator.pop(context);
           },
         ),
-        backgroundColor: Color(0xfff9f9f9),
+        backgroundColor: Colors.white,
       ),
-      backgroundColor: Color(0xfff9f9f9),
-      body: path != null ? Container(
-        child: PDFView(
-          filePath: path,
-        ),
+      backgroundColor: Colors.white,
+      body: path != null ? PDFView(
+        filePath: path,
       ) : Loading(),
       floatingActionButton: IconButton(
         icon: Icon(Icons.refresh,size: 30,),

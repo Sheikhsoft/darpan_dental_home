@@ -2,6 +2,7 @@ import 'package:darpandentalhome/model/appoitment.dart';
 import 'package:darpandentalhome/presentation/custom_icons.dart';
 import 'package:darpandentalhome/screen/home/appointment_form.dart';
 import 'package:darpandentalhome/screen/home/card_class.dart';
+import 'package:darpandentalhome/screen/profile/profile.dart';
 import 'package:darpandentalhome/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,8 +23,8 @@ class _HomeState extends State<Home> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   VoidCallback _showAppointmentFormCallBack;
   List<Appointment> appointments= [
-    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://www.ibm.com/downloads/cas/GJ5QVQ7X"),
-    Appointment(appointmentDate: '2020-01-01', appointedFor: 'Normal Check Up', reportURL: "https://www.ada.org/~/media/ADA/Public%20Programs/Files/MPRG_Dental_Records.pdf?la=en"),
+    Appointment(appointmentDate: '2019-12-01', appointedFor: 'Dental', reportURL: "https://firebasestorage.googleapis.com/v0/b/darpandentalhome-3567e.appspot.com/o/Patient_Report%2FReport%201.pdf?alt=media&token=5255856f-c9e9-40c1-87cb-6bf48bf41d99"),
+    Appointment(appointmentDate: '2020-01-01', appointedFor: 'Normal Check Up', reportURL: "https://firebasestorage.googleapis.com/v0/b/darpandentalhome-3567e.appspot.com/o/Patient_Report%2FReport%202.pdf?alt=media&token=7d2e747f-425a-4179-861e-99f0bfe7e20b"),
     ];
   @override
   void initState() {
@@ -162,7 +163,11 @@ class _HomeState extends State<Home> {
                       backgroundColor: Colors.grey,
                         radius: 30,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => Profile(),
+                          ));
+                        },
                         child: Text(
                             'S',
                           style: GoogleFonts.rubik(
